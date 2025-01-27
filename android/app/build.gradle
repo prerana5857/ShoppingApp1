@@ -84,6 +84,8 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        buildConfigField "boolean", "USE_HERMES", "true"
+
     }
     signingConfigs {
         debug {
@@ -105,7 +107,10 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+    
 }
+
+
 
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
@@ -117,5 +122,6 @@ dependencies {
         implementation jscFlavor
     }
 }
+
 
 apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
